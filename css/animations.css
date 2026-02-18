@@ -1,0 +1,569 @@
+/* ================================
+   ANIMATIONS AVANCÉES
+   ================================ */
+
+/* Pulse Animation pour les boutons CTA */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px 10px rgba(255, 107, 53, 0);
+    }
+}
+
+.btn-primary:hover {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide in from bottom */
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale in animation */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Rotate in animation */
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-180deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0);
+    }
+}
+
+/* Typewriter effect */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Wave animation */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(-5deg);
+    }
+}
+
+/* ================================
+   SPECIAL EFFECTS
+   ================================ */
+
+/* Glassmorphism effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Neumorphism effect */
+.neuro-effect {
+    background: #f0f0f0;
+    box-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.1),
+        -8px -8px 16px rgba(255, 255, 255, 0.7);
+}
+
+.neuro-effect:hover {
+    box-shadow: 
+        inset 8px 8px 16px rgba(0, 0, 0, 0.1),
+        inset -8px -8px 16px rgba(255, 255, 255, 0.7);
+}
+
+/* Glow effect */
+.glow-effect {
+    box-shadow: 
+        0 0 10px rgba(255, 107, 53, 0.3),
+        0 0 20px rgba(255, 107, 53, 0.2),
+        0 0 30px rgba(255, 107, 53, 0.1);
+}
+
+/* Text gradient effect */
+.text-gradient {
+    background: linear-gradient(135deg, #FF6B35 0%, #FFD23F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Animated gradient background */
+.animated-gradient {
+    background: linear-gradient(270deg, #FF6B35, #FFD23F, #004E89, #06D6A0);
+    background-size: 800% 800%;
+    animation: gradientShift 15s ease infinite;
+}
+
+/* ================================
+   INTERACTIVE EFFECTS
+   ================================ */
+
+/* Ripple effect on click */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Magnetic effect */
+.magnetic {
+    transition: transform 0.3s ease;
+}
+
+.magnetic:hover {
+    transform: scale(1.05);
+}
+
+/* Tilt effect */
+.tilt-effect {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.tilt-effect:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+}
+
+/* ================================
+   LOADING ANIMATIONS
+   ================================ */
+
+/* Dots loading */
+.dots-loading::after {
+    content: '...';
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Spinner loading */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 107, 53, 0.2);
+    border-top-color: #FF6B35;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Progress bar animation */
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 107, 53, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #FF6B35, #FFD23F);
+    animation: progressLoad 2s ease forwards;
+}
+
+@keyframes progressLoad {
+    to { width: 100%; }
+}
+
+/* ================================
+   SCROLL ANIMATIONS
+   ================================ */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ================================
+   HOVER EFFECTS
+   ================================ */
+
+/* Lift on hover */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Zoom on hover */
+.hover-zoom {
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+/* Border animation on hover */
+.hover-border {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FF6B35, transparent);
+    transition: left 0.5s ease;
+}
+
+.hover-border:hover::before {
+    left: 100%;
+}
+
+/* Underline animation on hover */
+.hover-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FF6B35;
+    transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+
+/* ================================
+   PARTICLE EFFECTS
+   ================================ */
+
+/* Floating particles background */
+.particles-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.particles-bg::before,
+.particles-bg::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 10s ease-in-out infinite;
+}
+
+.particles-bg::before {
+    background: #FF6B35;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particles-bg::after {
+    background: #FFD23F;
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+/* ================================
+   TEXT EFFECTS
+   ================================ */
+
+/* Highlight text animation */
+.highlight-text {
+    background: linear-gradient(90deg, transparent, #FFD23F, transparent);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    padding: 0 5px;
+    transition: background-position 0.5s ease;
+}
+
+.highlight-text:hover {
+    background-position: 0 0;
+}
+
+/* Neon text effect */
+.neon-text {
+    color: #fff;
+    text-shadow:
+        0 0 5px #FF6B35,
+        0 0 10px #FF6B35,
+        0 0 20px #FF6B35,
+        0 0 40px #FF6B35;
+    animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 5px #FF6B35,
+            0 0 10px #FF6B35,
+            0 0 20px #FF6B35,
+            0 0 40px #FF6B35;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* Typewriter effect for text */
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid #FF6B35;
+    white-space: nowrap;
+    animation: 
+        typewriter 3s steps(30) 1s forwards,
+        blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* ================================
+   BADGE ANIMATIONS
+   ================================ */
+
+/* Pulse badge */
+.badge-pulse {
+    animation: pulseBadge 2s ease-in-out infinite;
+}
+
+@keyframes pulseBadge {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* Bounce badge */
+.badge-bounce {
+    animation: bounceBadge 1s ease infinite;
+}
+
+@keyframes bounceBadge {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Rotate badge */
+.badge-rotate {
+    animation: rotateBadge 3s linear infinite;
+}
+
+@keyframes rotateBadge {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================
+   UTILITY ANIMATIONS
+   ================================ */
+
+/* Fade in */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Fade out */
+.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Shake animation */
+.shake {
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+/* Swing animation */
+.swing {
+    animation: swing 1s ease;
+}
+
+@keyframes swing {
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* ================================
+   RESPONSIVE ANIMATIONS
+   ================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
